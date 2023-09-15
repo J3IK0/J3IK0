@@ -1,0 +1,33 @@
+import tkinter as tk
+
+def sumar():
+    resultado.config(text=f"Resultado: {float(num1.get()) + float(num2.get())}")
+
+def restar():
+    resultado.config(text=f"Resultado: {float(num1.get()) - float(num2.get())}")
+
+ventana = tk.Tk()
+
+num1 = tk.StringVar()
+num2 = tk.StringVar()
+
+etiqueta_num1 = tk.Label(ventana, text="Número 1:")
+entrada_num1 = tk.Entry(ventana, textvariable=num1)
+
+etiqueta_num2 = tk.Label(ventana, text="Número 2:")
+entrada_num2 = tk.Entry(ventana, textvariable=num2)
+
+boton_sumar = tk.Button(ventana, text="Sumar", command=sumar)
+boton_restar = tk.Button(ventana, text="Restar", command=restar)
+
+resultado = tk.Label(ventana, text="Resultado: ")
+
+etiqueta_num1.pack()
+entrada_num1.pack()
+etiqueta_num2.pack()
+entrada_num2.pack()
+boton_sumar.pack()
+boton_restar.pack()
+resultado.pack()
+
+ventana.mainloop()
